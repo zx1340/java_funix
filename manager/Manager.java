@@ -103,12 +103,18 @@ public class Manager{
 	public static ArrayList findEmployees(ArrayList allworker,String name, String branch){
 		
 		ArrayList employeesfound = new ArrayList();
+
 		for (int i = 0; i < allworker.size(); i++) {
-			if (allworker.get(i).getClass() == Worker.class){
+			
+			if (allworker.get(i).getClass() == Employees.class){
+			
 				Employees employees = (Employees) allworker.get(i);
-				String employees_name = employees.getName().toLowerCase();
-				String employees_branch = employees.getBranch().toLowerCase();
-				if (employees_name.contains(name.toLowerCase()) && employees_branch.equals(branch.toLowerCase())) {
+				
+				String employees_name = employees.getName();
+				String employees_branch = employees.getBranch();
+
+
+				if (employees_name.contains(name) && employees_branch.equals(branch)) {
 					employeesfound.add(employees);
 				}
 			}

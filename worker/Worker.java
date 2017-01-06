@@ -1,7 +1,5 @@
 package worker;
 
-
-
 public abstract class Worker{
 
 	private String name;
